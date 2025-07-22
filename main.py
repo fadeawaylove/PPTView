@@ -5,8 +5,13 @@ import json
 import subprocess
 import sys
 
-TAG_FILE = 'tags.json'
-CONFIG_FILE = 'config.json'
+
+home_dir = os.path.expanduser('~')
+app_data_dir = os.path.join(home_dir, '.PPTView')
+os.makedirs(app_data_dir, exist_ok=True)
+
+TAG_FILE = os.path.join(app_data_dir, 'tags.json')
+CONFIG_FILE = os.path.join(app_data_dir, 'config.json')
 
 
 def load_tags():
